@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="dark-theme">
+    <div class="theme-toggle">
+        <button id="themeToggle" class="theme-btn">
+            <span class="light-icon">☀️</span>
+            <span class="dark-icon">🌙</span>
+        </button>
+    </div>
+    <div class="game-container">
+        <div class="score-container">
+            <span>Score: </span>
+            <span id="score">0</span>
+        </div>
+        <canvas id="gameCanvas"></canvas>
+        <div class="controls-container">
+            <div class="touch-controls">
+                <button id="upBtn" class="control-btn">↑</button>
+                <div class="horizontal-controls">
+                    <button id="leftBtn" class="control-btn">←</button>
+                    <button id="rightBtn" class="control-btn">→</button>
+                </div>
+                <button id="downBtn" class="control-btn">↓</button>
+            </div>
+        </div>
+        <div id="gameOver" class="game-over hidden">
+            <h2>Game Over!</h2>
+            <p>Final Score: <span id="finalScore">0</span></p>
+            <button id="restartBtn" class="restart-btn">Play Again</button>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/controls.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/game.js') }}"></script>
+</body>
+</html>
